@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SigninActivity">
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_above="@+id/btn_varify"
+        android:hint="아이디"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/btn_varify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아이디 중복확인"
+        android:layout_above="@+id/et_pass1"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/et_pass1"
+        android:layout_width="wrap_content"
+        android:ems="10"
+        android:hint="비밀번호입력"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_pass2"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/et_pass2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="비밀번호확인"
+        android:layout_centerInParent="true"/>
+    <Button
+        android:id="@+id/btn_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:layout_below="@+id/et_pass2"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="취소"
+        android:layout_below="@+id/btn_signin"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
