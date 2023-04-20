@@ -64,7 +64,7 @@ public class ParkInfo1Fragment  extends Fragment {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getActivity(), "xmlparsing중", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "xmlparsing중", Toast.LENGTH_SHORT).show();
             }
         });
         new Thread(){
@@ -92,7 +92,7 @@ public class ParkInfo1Fragment  extends Fragment {
                                 getActivity().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(getActivity(), "정보를 가져옵니다.", Toast.LENGTH_SHORT).show();
+//                                        Toast.makeText(getActivity(), "정보를 가져옵니다.", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                                 break;
