@@ -48,14 +48,23 @@ public class ParkInfo1Fragment  extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //테스트용 대량의 아이템
+//        items.add(new ItemRecycler("문정근린공원", "서울특별시 송파구 문정동 18-4", "조경시설 : 바닥분수 초가정자 사각정자 휴게벤치 등 기반시설 : 경화토포장로 마사토산책로 등", "수 목 : 소나무 메타세콰이아 은행나무 등 38종 30966주", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1699", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1537"));
+//        items.add(new ItemRecycler("문정근린공원", "서울특별시 송파구 문정동 18-4", "조경시설 : 바닥분수 초가정자 사각정자 휴게벤치 등 기반시설 : 경화토포장로 마사토산책로 등", "수 목 : 소나무 메타세콰이아 은행나무 등 38종 30966주", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1699", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1537"));
+//        items.add(new ItemRecycler("문정근린공원", "서울특별시 송파구 문정동 18-4", "조경시설 : 바닥분수 초가정자 사각정자 휴게벤치 등 기반시설 : 경화토포장로 마사토산책로 등", "수 목 : 소나무 메타세콰이아 은행나무 등 38종 30966주", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1699", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1537"));
+//        items.add(new ItemRecycler("문정근린공원", "서울특별시 송파구 문정동 18-4", "조경시설 : 바닥분수 초가정자 사각정자 휴게벤치 등 기반시설 : 경화토포장로 마사토산책로 등", "수 목 : 소나무 메타세콰이아 은행나무 등 38종 30966주", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1699", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1537"));
+//        items.add(new ItemRecycler("문정근린공원", "서울특별시 송파구 문정동 18-4", "조경시설 : 바닥분수 초가정자 사각정자 휴게벤치 등 기반시설 : 경화토포장로 마사토산책로 등", "수 목 : 소나무 메타세콰이아 은행나무 등 38종 30966주", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1699", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1537"));
+//        items.add(new ItemRecycler("문정근린공원", "서울특별시 송파구 문정동 18-4", "조경시설 : 바닥분수 초가정자 사각정자 휴게벤치 등 기반시설 : 경화토포장로 마사토산책로 등", "수 목 : 소나무 메타세콰이아 은행나무 등 38종 30966주", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1699", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1537"));
+//        items.add(new ItemRecycler("문정근린공원", "서울특별시 송파구 문정동 18-4", "조경시설 : 바닥분수 초가정자 사각정자 휴게벤치 등 기반시설 : 경화토포장로 마사토산책로 등", "수 목 : 소나무 메타세콰이아 은행나무 등 38종 30966주", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1699", "http://parks.seoul.go.kr/file/info/view.do?fIdx=1537"));
+
         xmlParsing();
     }
 
     void xmlParsing(){
-        requireActivity().runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getActivity(), "xmlparsing중", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "xmlparsing중", Toast.LENGTH_SHORT).show();
             }
         });
         new Thread(){
@@ -80,10 +89,10 @@ public class ParkInfo1Fragment  extends Fragment {
                     while (eventType != XmlPullParser.END_DOCUMENT) {
                         switch (eventType) {
                             case XmlPullParser.START_DOCUMENT:
-                                requireActivity().runOnUiThread(new Runnable() {
+                                getActivity().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(getActivity(), "정보를 가져옵니다.", Toast.LENGTH_SHORT).show();
+//                                        Toast.makeText(getActivity(), "정보를 가져옵니다.", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                                 break;
@@ -119,18 +128,20 @@ public class ParkInfo1Fragment  extends Fragment {
                                         item.urlSite = "http://data.seoul.go.kr/dataList/OA-394/S/1/datasetView.do";
                                     else item.urlSite = tUrl;
                                 }
+                                break;
                             case XmlPullParser.END_TAG:
                                 String tagName2 = xpp.getName();
                                 if (tagName2.equals("row")) {
                                     items.add(item);
-                                } else break;
+                                }
                                 break;
                             case XmlPullParser.TEXT:
                                 break;
                         }//switch-case
                         eventType = xpp.next();
                     }//while()
-                    requireActivity().runOnUiThread(new Runnable() {
+
+                    getActivity().runOnUiThread(new Runnable() {
                         @SuppressLint("NotifyDataSetChanged")
                         @Override
                         public void run() {
